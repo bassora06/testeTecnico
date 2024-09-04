@@ -14,30 +14,30 @@ with open('dados.json', 'r', encoding='utf-8')as arquivo:
 
     
 for dia in faturamento:
-    if dia[1] != 0:
-        soma += dia[1]
+    if dia["valor"] != 0:
+        soma += dia["valor"]
         diasValidos += 1
     else:
-        soma += dia[1]
+        soma += dia["valor"]
 
 maiorValor = 0
-menorValor = faturamento[0][1]
+menorValor = faturamento[0]["valor"]
 superiorMediaMensal = 0
 
 
 for dia in faturamento:
-    if dia[1] > maiorValor:
-        maiorValor = dia[1]
+    if dia['valor'] > maiorValor:
+        maiorValor = dia['valor']
 
 for dia in faturamento:
-    if dia[1] != 0:
-        if dia[1] < menorValor:
-            menorValor = dia[1]
+    if dia['valor'] != 0:
+        if dia['valor'] < menorValor:
+            menorValor = dia['valor']
 
 media = soma / diasValidos
 
 for dia in faturamento:
-    if dia[1] > media:
+    if dia['valor'] > media:
         superiorMediaMensal = dia
 
 print(menorValor)

@@ -3,7 +3,7 @@ segundoValor = 1
 
 fibonacci = []
 
-numero = 2
+numero = 5
 
 
 for i in range(10):
